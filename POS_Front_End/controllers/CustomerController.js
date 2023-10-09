@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080/jpa/";
+const BASE_URL = "http://localhost:8080/POS_Back_End_war/";
 
 //load all existing customers
 getAllCustomers();
@@ -46,9 +46,9 @@ $("#btnCusDelete").click(function () {
             alert("Customer Deleted");
             clearCustomerInputFields();
             getAllCustomers();
-        } else {
+        } /*else {
             alert("Customer Not Removed..!");
-        }
+        }*/
     }
 
 
@@ -71,7 +71,7 @@ $("#btn-clear1").click(function () {
 function saveCustomer() {
     let customerID = $("#txtCustomerID").val();
     //check customer is exists or not?
-    if (searchCustomer(customerID.trim()) == undefined) {
+   /* if (searchCustomer(customerID.trim()) == undefined) {*/
 
         let formData = $("#customerForm").serialize();
         $.ajax({
@@ -92,10 +92,10 @@ function saveCustomer() {
         });
 
 
-    } else {
+    /*} else {
         alert("Customer already exits.!");
         clearCustomerInputFields();
-    }
+    }*/
 }
 
 function getAllCustomers() {
