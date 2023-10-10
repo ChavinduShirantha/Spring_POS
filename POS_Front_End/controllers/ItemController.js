@@ -114,7 +114,7 @@ function getAllItems() {
                 let item = items[i];
                 let code = item.code;
                 let description = item.description;
-                let qtyOnHand = item.qty;
+                let qtyOnHand = item.qtyOnHand;
                 let unitPrice = item.unitPrice;
                 let row = `<tr><td>${code}</td><td>${description}</td><td>${qtyOnHand}</td><td>${unitPrice}</td></tr>`;
                 $("#tblItem").append(row);

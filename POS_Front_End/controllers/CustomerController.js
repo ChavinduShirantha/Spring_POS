@@ -1,5 +1,6 @@
 const BASE_URL = "http://localhost:8080/POS_Back_End_war/";
 
+
 //load all existing customers
 getAllCustomers();
 
@@ -147,7 +148,7 @@ function getAllCustomers() {
 
 function deleteCustomer(id) {
     $.ajax({
-        url: BASE_URL + 'customer?cusID=' + id,
+        url: BASE_URL + 'customer?id=' + id,
         method: 'delete',
         headers:{
             Auth:"user=admin,pass=admin"
