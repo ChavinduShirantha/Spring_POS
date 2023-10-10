@@ -66,9 +66,9 @@ $("#btn-clear").click(function () {
 
 // CRUD operation Functions
 function saveItem() {
-    let itemCode = $("#itemCode").val();
+    // let itemCode = $("#itemCode").val();
     //check item is exists or not?
-    if (searchItem(itemCode.trim()) == undefined) {
+    // if (searchItem(itemCode.trim()) == undefined) {
 
         //if the customer is not available then add him to the array
         let itemFormData = $("#itemForm").serialize();
@@ -92,10 +92,10 @@ function saveItem() {
 
 
 
-    } else {
+    /*} else {
         alert("Item already exits.!");
         clearItemInputFields();
-    }
+    }*/
 }
 
 function getAllItems() {

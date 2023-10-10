@@ -69,18 +69,36 @@ $("#btn-clear1").click(function () {
 
 // CRUD operation Functions
 function saveCustomer() {
-    let customerID = $("#txtCustomerID").val();
+
+    let customerFormData = $("#customerForm").serialize();
+    $.ajax({
+        url: BASE_URL + "customer",
+        method: "post",
+        data: customerFormData,
+        headers:{
+            Auth:"user=admin,pass=admin"
+        },
+        success: function (res) {
+            alert(res.message);
+            clearItemInputFields();
+            getAllItems();
+        },
+        error: function (error) {
+            alert(error.responseJSON.message);
+        }
+    });
+    // let customerID = $("#txtCustomerID").val();
     //check customer is exists or not?
    /* if (searchCustomer(customerID.trim()) == undefined) {*/
 
-        let formData = $("#customerForm").serialize();
+       /* let formData = $("#customerForm").serialize();
         $.ajax({
             url: BASE_URL + "customer",
             method: "post",
+            data: formData,
             headers:{
                 Auth:"user=admin,pass=admin"
             },
-            data: formData,
             success: function (res) {
                 alert(res.message);
                 clearCustomerInputFields();
@@ -89,7 +107,7 @@ function saveCustomer() {
             error: function (error) {
                 alert(error.responseJSON.message);
             }
-        });
+        });*/
 
 
     /*} else {
